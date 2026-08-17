@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 
 from .config import settings
 from .context_budget import ContextBudgetManager
-from .utils import cap_query, join_nonempty
+from .utils import cap_query, estimate_tokens, join_nonempty
 from .zep_common import prime_eval_thread, render_graph_search
 
 
@@ -49,7 +50,11 @@ class StudentMemory:
         except Exception:
             fact_text = ""
 
-        return join_nonempty([context_block, fact_text], sep="\n\n")
+        # Facts first: edge facts are compact and ranked for the query, so
+        # marker-bearing facts (open loops like LAB-REPORT-1600, preferences,
+        # validity ranges) survive inside the 4% long-term budget. The Context
+        # Block still follows as the primary long-term source.
+        return join_nonempty([fact_text, context_block], sep="\n\n")
 
     def retrieve_episodic(self, user_id: str, query: str) -> str:
         # LAB TODO 2/4
@@ -58,15 +63,49 @@ class StudentMemory:
         # Tip: verbose session episodes can crowd out concise, marker-bearing
         # reflections under the tight episodic budget — render_graph_search
         # accepts an `episode_char_cap` to keep more distinct episodes.
+        # limit=5 + a per-episode cap keeps the rendered evidence inside the 3%
+        # episodic budget (5 x ~190 chars = 950 chars <= 240 tokens), so the
+        # budget manager never has to trim away a marker-bearing episode.
         results = self.client.graph.search(
             user_id=user_id,
             query=cap_query(query),
             scope="episodes",
-            limit=15,
+            limit=5,
         )
         # Cap each episode so short marker-bearing reflections (e.g. ASYNC-FIX-20
         # trajectory) survive inside the 3% episodic token budget.
         return render_graph_search(results, episode_char_cap=180)
+
+    @staticmethod
+    def _render_semantic_episodes(results: Any) -> str:
+        """Render standalone-graph episodes compactly, keeping literal markers.
+
+        Each KB document is ingested twice (full JSON + plain text summary), so
+        raw episodes duplicate content and blow the 3% semantic budget before
+        trimming even starts. Extract the summary (which carries the literal
+        marker like PAYMENT-RULE-3) from the JSON variant and dedupe the pair.
+        Four summaries (~185 chars each) fit comfortably inside 240 tokens, so
+        the budget manager never trims away a tail marker.
+        """
+        parts: list[str] = []
+        seen: set[str] = set()
+        for episode in getattr(results, "episodes", None) or []:
+            content = (getattr(episode, "content", None) or "").strip()
+            if not content:
+                continue
+            text = content
+            if content.startswith("{"):
+                try:
+                    data = json.loads(content)
+                    text = str(data.get("summary") or data.get("entity") or content)
+                except Exception:
+                    text = content
+            key = text[:100]
+            if key in seen:
+                continue
+            seen.add(key)
+            parts.append(f"EPISODE: {text}")
+        return join_nonempty(parts)
 
     def retrieve_semantic(self, graph_id: str, query: str) -> str:
         # LAB TODO 3/4
@@ -83,21 +122,64 @@ class StudentMemory:
                 scope="episodes",
                 limit=8,
             )
+            rendered = self._render_semantic_episodes(results)
+            if rendered:
+                return rendered
         except Exception:
-            # Compatibility fallback: some SDKs/accounts only expose node search
-            # for standalone graphs; nodes still carry document summaries with
-            # the literal markers needed by the scorer.
-            results = self.client.graph.search(
-                graph_id=graph_id,
-                query=q,
-                scope="nodes",
-                limit=8,
-            )
+            pass
+        # Compatibility fallback: some SDKs/accounts only expose node search
+        # for standalone graphs; nodes still carry document summaries with
+        # the literal markers needed by the scorer.
+        results = self.client.graph.search(
+            graph_id=graph_id,
+            query=q,
+            scope="nodes",
+            limit=8,
+        )
         return render_graph_search(results)
+
+    @staticmethod
+    def _trim_evidence(text: str, max_tokens: int, head_ratio: float = 0.7) -> str:
+        """Trim one layer to its budget while keeping BOTH ends of the text.
+
+        Zep renders the most salient content (user summary, top-ranked facts,
+        first documents) at the head, but marker-bearing evidence is often at
+        the tail: open-loop/validity facts and document markers such as
+        PAYMENT-RULE-3 / BUDGET-10-4-3-3 sit at the end of their section or
+        document. A pure head-trim silently drops those tail markers, so this
+        trim keeps a head slice plus a tail slice (default 70/30) of the
+        character budget. Layer limits still follow the 10/4/3/3 budget and
+        priority order handled by ContextBudgetManager.
+        """
+        if not text:
+            return ""
+        if estimate_tokens(text) <= max_tokens:
+            return text
+        max_chars = max_tokens * 4
+        head = int(max_chars * head_ratio)
+        tail = max_chars - head
+        head_text = text[:head]
+        tail_text = text[-tail:] if tail > 0 else ""
+        if len(head_text) + len(tail_text) >= len(text):
+            return text
+        return f"{head_text}\n[...trimmed...]\n{tail_text}"
 
     def assemble_context(self, layers: dict[str, str]) -> tuple[str, dict[str, dict[str, int]]]:
         # LAB TODO 4/4
         # Use ContextBudgetManager to enforce 10/4/3/3 budget and priority order
         # (short_term -> long_term -> episodic -> semantic) and return both the
         # merged, budget-trimmed text and the per-layer token breakdown.
-        return self.budget.assemble(layers)
+        rendered: list[str] = []
+        breakdown: dict[str, dict[str, int]] = {}
+        for layer in self.budget.priority:
+            raw = layers.get(layer, "") or ""
+            limit = self.budget.layer_limit(layer)
+            trimmed = self._trim_evidence(raw, limit)
+            breakdown[layer] = {
+                "limit_tokens": limit,
+                "raw_tokens": estimate_tokens(raw),
+                "used_tokens": estimate_tokens(trimmed),
+            }
+            if trimmed.strip():
+                rendered.append(f"<{layer.upper()}>\n{trimmed}\n</{layer.upper()}>")
+        return "\n\n".join(rendered), breakdown

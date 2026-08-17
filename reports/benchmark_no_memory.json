@@ -43,7 +43,7 @@
         "exponential-backoff"
       ],
       "forbidden_found": [],
-      "latency_ms": 0.1,
+      "latency_ms": 0.0,
       "retrieved_tokens": 0,
       "full_source_tokens": 459,
       "token_reduction": 1.0,
@@ -79,7 +79,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 0.3,
+      "latency_ms": 0.2,
       "retrieved_tokens": 195,
       "full_source_tokens": 100,
       "token_reduction": 0.0,
