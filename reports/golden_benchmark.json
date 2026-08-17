@@ -5,8 +5,8 @@
     "cases": 20,
     "passed": 20,
     "memory_hit_rate": 1.0,
-    "avg_latency_ms": 999.0,
-    "avg_token_reduction": 0.1744,
+    "avg_latency_ms": 1018.0,
+    "avg_token_reduction": 0.1484,
     "perfect": true,
     "golden_points": 10
   },
@@ -18,7 +18,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 0.2,
+      "latency_ms": 0.3,
       "retrieved_tokens": 227,
       "full_source_tokens": 105,
       "token_reduction": 0.0,
@@ -60,7 +60,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1303.2,
+      "latency_ms": 1210.6,
       "retrieved_tokens": 656,
       "full_source_tokens": 44,
       "token_reduction": 0.0,
@@ -76,14 +76,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 230.6,
+      "latency_ms": 219.2,
       "retrieved_tokens": 148,
       "full_source_tokens": 459,
       "token_reduction": 0.6776,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "EPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3."
+      "retrieved": "EPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3."
     },
     {
       "id": "G10",
@@ -92,7 +92,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 226.5,
+      "latency_ms": 244.8,
       "retrieved_tokens": 95,
       "full_source_tokens": 459,
       "token_reduction": 0.793,
@@ -108,7 +108,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1594.4,
+      "latency_ms": 1530.2,
       "retrieved_tokens": 431,
       "full_source_tokens": 387,
       "token_reduction": 0.0,
@@ -145,14 +145,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1220.0,
-      "retrieved_tokens": 1405,
+      "latency_ms": 1222.1,
+      "retrieved_tokens": 1388,
       "full_source_tokens": 221,
       "token_reduction": 0.0,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "FACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant is presenting the demo ca nhan ORCHID-27. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-01T09:02:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-17 09:52:23\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Evaluation User\"\n}: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. (2026-08-05 08:00:00)\n  - Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen increased the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Minh Nguyen\n    Label: User\n    Attributes:\n      email: \n      first_name: Minh\n      last_name: Nguyen\n      name: Minh Nguyen\n      role_type: user\n      user_id: minh-lab17\n    Summary: For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n</THREADS>"
+      "retrieved": "FACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant is presenting the demo ca nhan ORCHID-27. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-01T09:02:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-05 08:00:00\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Minh Nguyen\"\n}: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHID-27.\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen increased the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Minh Nguyen\n    Label: User\n    Attributes:\n      email: \n      first_name: Minh\n      last_name: Nguyen\n      name: Minh Nguyen\n      role_type: user\n      user_id: minh-lab17\n    Summary: For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n</THREADS>"
     },
     {
       "id": "G04",
@@ -161,14 +161,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1365.0,
+      "latency_ms": 1167.8,
       "retrieved_tokens": 1410,
       "full_source_tokens": 221,
       "token_reduction": 0.0,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "FACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: The benchmark report is an open loop LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Lab Assistant prioritizes the timeline when explaining Task. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-01 09:04:00\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Minh Nguyen\"\n}: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen increased the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n  - Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. (2026-08-01 09:04:00)\n  - Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. (2026-08-05 08:00:00)\n  - Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. (2026-08-03 10:00:00)\n  - If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. (2026-08-01 09:02:00)\n  - Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. (2026-08-03 10:03:00)\n  - The benchmark report is an open loop LAB-REPORT-1600. (2026-08-01 09:04:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Task\n    Label: Topic\n    Attributes:\n      name: Task\n    Summary: Minh Nguyen is studying async/await and sometimes confuses coroutine with Task. Minh requested an explanation of this topic via a timeline if it arises again.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n  - Name: minh-s3\n</THREADS>"
+      "retrieved": "FACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: The benchmark report is an open loop LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Lab Assistant prioritizes the timeline when explaining Task. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-01 09:04:00\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Minh Nguyen\"\n}: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. (2026-08-01 09:04:00)\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen increased the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. (2026-08-01 09:02:00)\n  - Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. (2026-08-05 08:00:00)\n  - The benchmark report is an open loop LAB-REPORT-1600. (2026-08-01 09:04:00)\n  - The benchmark report is due by 16:00. (2026-08-01 09:04:00)\n  - Lab Assistant checks concurrency. (2026-08-03 10:01:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Task\n    Label: Topic\n    Attributes:\n      name: Task\n    Summary: Minh Nguyen is studying async/await and sometimes confuses coroutine with Task. Minh requested an explanation of this topic via a timeline if it arises again.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n</THREADS>"
     },
     {
       "id": "G07",
@@ -177,14 +177,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 282.8,
-      "retrieved_tokens": 159,
+      "latency_ms": 236.9,
+      "retrieved_tokens": 222,
       "full_source_tokens": 221,
-      "token_reduction": 0.2805,
+      "token_reduction": 0.0,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "EPISODE: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn.\nEPISODE: Sep hoi chuan hoa backend du an cong ty, minh hay lan voi stack project rieng. Rieng du an cong ty cua Minh: bat buoc ngon ngu va framework nao? Python ca nhan co duoc dung backend"
+      "retrieved": "EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail."
     },
     {
       "id": "G08",
@@ -193,14 +193,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 327.6,
-      "retrieved_tokens": 202,
+      "latency_ms": 222.5,
+      "retrieved_tokens": 219,
       "full_source_tokens": 221,
-      "token_reduction": 0.086,
+      "token_reduction": 0.009,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline.\nEPISODE: Cuoi tuan minh ngoi mot minh lam demo rieng, khong hop team. Truoc khi chon template, nhac lai: khi lam viec ca nhan minh uu tien ngon ngu nao, va ma du an demo ca nhan la gi? Chi \nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Sep hoi chuan hoa backend du an cong ty, minh hay lan voi stack project rieng. Rieng du an cong ty cua Minh: bat buoc ngon ngu va framework nao? Python ca nhan co duoc dung backend"
+      "retrieved": "EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python.\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Toi se uu tien timeline khi giai thich coroutine va Task.\nEPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline."
     },
     {
       "id": "G11",
@@ -209,232 +209,10 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1524.6,
+      "latency_ms": 1401.4,
       "retrieved_tokens": 440,
       "full_source_tokens": 565,
       "token_reduction": 0.2212,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 1398,
-          "used_tokens": 325
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 103,
-          "used_tokens": 103
-        }
-      },
-      "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen needs to complete the be\n[...trimmed...]\n 09:00:20)\n  - demo ca nhan ORCHID-27 avoids Java. (2026-08-01 09:00:20)\n  - Lab Assistant checks concurrency. (2026-08-03 10:01:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: timeout\n    Label: Object\n    Attributes:\n      name: timeout\n    Summary: Minh Nguyen increased the timeout to 60s while debugging async HTTP, but the issue persisted.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G13",
-      "layer": "mixed",
-      "query": "Minh muon viet retry POST payment nhung so lap lai dung cai loi async HTTP da tung dinh. Ghep: fix async nao that su work o lan truoc, va policy payment yeu cau danh dau request the nao de khong tao don trung.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 466.9,
-      "retrieved_tokens": 359,
-      "full_source_tokens": 565,
-      "token_reduction": 0.3646,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 198,
-          "used_tokens": 198
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 150,
-          "used_tokens": 150
-        }
-      },
-      "error": "",
-      "retrieved": "<EPISODIC>\nEPISODE: Cuoi tuan minh ngoi mot minh lam demo rieng, khong hop team. Truoc khi chon template, nhac lai: khi lam viec ca nhan minh uu tien ngon ngu nao, va ma du an demo ca nhan la gi? Chi \nEPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop.\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Sep hoi chuan hoa backend du an cong ty, minh hay lan voi stack project rieng. Rieng du an cong ty cua Minh: bat buoc ngon ngu va framework nao? Python ca nhan co duoc dung backend\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G15",
-      "layer": "mixed",
-      "query": "Toi nay minh viet tool ca nhan de tai hien su co HTTP roi sua dung playbook. Can ba manh: ngon ngu minh thich khi lam mot minh, ma su co async lan truoc, va buoc playbook truoc khi tang timeout. Scope Minh, dung tron Lan.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 1790.0,
-      "retrieved_tokens": 683,
-      "full_source_tokens": 565,
-      "token_reduction": 0.0,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 1406,
-          "used_tokens": 325
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 191,
-          "used_tokens": 191
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 150,
-          "used_tokens": 150
-        }
-      },
-      "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z,\n[...trimmed...]\n27. (2026-08-01 09:00:20)\n  - demo ca nhan ORCHID-27 avoids Java. (2026-08-01 09:00:20)\n</FACTS>\n\n<ENTITIES>\n  - Name: async HTTP\n    Label: Topic\n    Attributes:\n      name: async HTTP\n    Summary: Minh Nguyen was debugging async HTTP today and increased the timeout to 60s, but it still failed.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<EPISODIC>\nEPISODE: Cuoi tuan minh ngoi mot minh lam demo rieng, khong hop team. Truoc khi chon template, nhac lai: khi lam viec ca nhan minh uu tien ngon ngu nao, va ma du an demo ca nhan la gi? Chi \nEPISODE: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?\nEPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Sep hoi chuan hoa backend du an cong ty, minh hay lan voi stack project rieng. Rieng du an cong ty cua Minh: bat buoc ngon ngu va framework nao? Python ca nhan co duoc dung backend\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G16",
-      "layer": "mixed",
-      "query": "Minh con mot open-loop phai nop truoc deadline, dong thoi muon ghi chu retry payment dung so lan toi da theo policy. Nac lai ma task/deadline con dang do, va gioi han retry chinh thuc trong lab.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 2006.4,
-      "retrieved_tokens": 485,
-      "full_source_tokens": 565,
-      "token_reduction": 0.1416,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 1382,
-          "used_tokens": 325
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 148,
-          "used_tokens": 148
-        }
-      },
-      "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Lab Assistant checks concurrency. [valid_at=2026-08-03T10:01:00Z, invalid_at=None]\nFACT: The benchmark report is an open loop LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining coroutine. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining Task. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T\n[...trimmed...]\n loop LAB-REPORT-1600. (2026-08-01 09:04:00)\n  - The benchmark report is due by 16:00. (2026-08-01 09:04:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: LAB-REPORT-1600\n    Label: Topic\n    Attributes:\n      name: LAB-REPORT-1600\n    Summary: This is LAB-REPORT-1600, a benchmark report that Minh Nguyen needs to complete before Friday at 16:00.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G17",
-      "layer": "mixed",
-      "query": "Minh sap giai thich coroutine cho ban, dong thoi can nhac policy retry payment vao vi du. Minh hoc kieu nao thi de nho? Va request retry payment phai mang header nao? Dung lay style hay stack cua nguoi khac.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 1549.5,
-      "retrieved_tokens": 485,
-      "full_source_tokens": 565,
-      "token_reduction": 0.1416,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 1410,
-          "used_tokens": 325
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 148,
-          "used_tokens": 148
-        }
-      },
-      "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining coroutine. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [val\n[...trimmed...]\ntion via a timeline. (2026-08-01 09:02:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: async/await\n    Label: Topic\n    Attributes:\n      name: async/await\n    Summary: Minh Nguyen is studying async/await and sometimes confuses coroutine with Task. Minh requested an explanation of this topic via a timeline if it arises again.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G18",
-      "layer": "mixed",
-      "query": "Viet slide hau kiem: root cause async lan truoc la gi, va khi cat context cho agent thi ty le budget bon tang nho trong lab la bao nhieu? Can reflection that va ma ngan sach, khong doan.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 440.5,
-      "retrieved_tokens": 349,
-      "full_source_tokens": 565,
-      "token_reduction": 0.3823,
-      "short_term_stats": {},
-      "budget_breakdown": {
-        "short_term": {
-          "limit_tokens": 800,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "long_term": {
-          "limit_tokens": 320,
-          "raw_tokens": 0,
-          "used_tokens": 0
-        },
-        "episodic": {
-          "limit_tokens": 240,
-          "raw_tokens": 191,
-          "used_tokens": 191
-        },
-        "semantic": {
-          "limit_tokens": 240,
-          "raw_tokens": 147,
-          "used_tokens": 147
-        }
-      },
-      "error": "",
-      "retrieved": "<EPISODIC>\nEPISODE: Cuoi tuan minh ngoi mot minh lam demo rieng, khong hop team. Truoc khi chon template, nhac lai: khi lam viec ca nhan minh uu tien ngon ngu nao, va ma du an demo ca nhan la gi? Chi \nEPISODE: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?\nEPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop.\nEPISODE: Toi nay minh viet tool ca nhan de tai hien su co HTTP roi sua dung playbook. Can ba manh: ngon ngu minh thich khi lam mot minh, ma su co async lan truoc, va buoc playbook truoc khi\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
-    },
-    {
-      "id": "G19",
-      "layer": "mixed",
-      "query": "Chuan bi demo ca nhan: ten/ma project rieng cua Minh la gi, va lan async HTTP truoc minh reuse client nhu the nao (kem ma su co)? Khong can policy domain chung, chi memory cua Minh.",
-      "passed": true,
-      "missing": [],
-      "forbidden_found": [],
-      "latency_ms": 1519.6,
-      "retrieved_tokens": 538,
-      "full_source_tokens": 565,
-      "token_reduction": 0.0478,
       "short_term_stats": {},
       "budget_breakdown": {
         "short_term": {
@@ -449,8 +227,230 @@
         },
         "episodic": {
           "limit_tokens": 240,
-          "raw_tokens": 201,
-          "used_tokens": 201
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 103,
+          "used_tokens": 103
+        }
+      },
+      "error": "",
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen often confuses coroutine\n[...trimmed...]\nemo ca nhan ORCHID-27 avoids Java. (2026-08-01 09:00:20)\n</FACTS>\n\n<ENTITIES>\n  - Name: Task\n    Label: Topic\n    Attributes:\n      name: Task\n    Summary: Minh Nguyen is studying async/await and sometimes confuses coroutine with Task. Minh requested an explanation of this topic via a timeline if it arises again.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
+    },
+    {
+      "id": "G13",
+      "layer": "mixed",
+      "query": "Minh muon viet retry POST payment nhung so lap lai dung cai loi async HTTP da tung dinh. Ghep: fix async nao that su work o lan truoc, va policy payment yeu cau danh dau request the nao de khong tao don trung.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 445.3,
+      "retrieved_tokens": 391,
+      "full_source_tokens": 565,
+      "token_reduction": 0.308,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 230,
+          "used_tokens": 230
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 150,
+          "used_tokens": 150
+        }
+      },
+      "error": "",
+      "retrieved": "<EPISODIC>\nEPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python.\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Toi se uu tien timeline khi giai thich coroutine va Task.\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\n</SEMANTIC>"
+    },
+    {
+      "id": "G15",
+      "layer": "mixed",
+      "query": "Toi nay minh viet tool ca nhan de tai hien su co HTTP roi sua dung playbook. Can ba manh: ngon ngu minh thich khi lam mot minh, ma su co async lan truoc, va buoc playbook truoc khi tang timeout. Scope Minh, dung tron Lan.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 1714.0,
+      "retrieved_tokens": 722,
+      "full_source_tokens": 565,
+      "token_reduction": 0.0,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 1404,
+          "used_tokens": 325
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 230,
+          "used_tokens": 230
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 150,
+          "used_tokens": 150
+        }
+      },
+      "error": "",
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z,\n[...trimmed...]\nssion\n    Attributes:\n      name: aiohttp ClientSession\n    Summary: Minh Nguyen suggested reusing aiohttp ClientSession with concurrency=20 as an effective approach. Minh identified connection churn as the primary issue, not the timeout threshold, which was related to the ASYNC-FIX-20 incident.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<EPISODIC>\nEPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python.\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Toi se uu tien timeline khi giai thich coroutine va Task.\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\n</SEMANTIC>"
+    },
+    {
+      "id": "G16",
+      "layer": "mixed",
+      "query": "Minh con mot open-loop phai nop truoc deadline, dong thoi muon ghi chu retry payment dung so lan toi da theo policy. Nac lai ma task/deadline con dang do, va gioi han retry chinh thuc trong lab.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 1439.7,
+      "retrieved_tokens": 485,
+      "full_source_tokens": 565,
+      "token_reduction": 0.1416,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 1379,
+          "used_tokens": 325
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 148,
+          "used_tokens": 148
+        }
+      },
+      "error": "",
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Lab Assistant checks concurrency. [valid_at=2026-08-03T10:01:00Z, invalid_at=None]\nFACT: The benchmark report is an open loop LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining coroutine. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining Task. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T\n[...trimmed...]\n is an open loop LAB-REPORT-1600. (2026-08-01 09:04:00)\n  - Lab Assistant is presenting the demo ca nhan ORCHID-27. (2026-08-01 09:00:20)\n</FACTS>\n\n<ENTITIES>\n  - Name: LAB-REPORT-1600\n    Label: Topic\n    Attributes:\n      name: LAB-REPORT-1600\n    Summary: This is an open loop LAB-REPORT-1600.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
+    },
+    {
+      "id": "G17",
+      "layer": "mixed",
+      "query": "Minh sap giai thich coroutine cho ban, dong thoi can nhac policy retry payment vao vi du. Minh hoc kieu nao thi de nho? Va request retry payment phai mang header nao? Dung lay style hay stack cua nguoi khac.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 1522.9,
+      "retrieved_tokens": 485,
+      "full_source_tokens": 565,
+      "token_reduction": 0.1416,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 1411,
+          "used_tokens": 325
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 148,
+          "used_tokens": 148
+        }
+      },
+      "error": "",
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Lab Assistant prioritizes the timeline when explaining coroutine. [valid_at=2026-08-01T09:02:20Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [val\n[...trimmed...]\nective approach. (2026-08-03 10:03:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Task\n    Label: Topic\n    Attributes:\n      name: Task\n    Summary: Minh Nguyen is studying async/await and sometimes confuses coroutine with Task. Minh requested an explanation of this topic via a timeline if it arises again.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
+    },
+    {
+      "id": "G18",
+      "layer": "mixed",
+      "query": "Viet slide hau kiem: root cause async lan truoc la gi, va khi cat context cho agent thi ty le budget bon tang nho trong lab la bao nhieu? Can reflection that va ma ngan sach, khong doan.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 513.2,
+      "retrieved_tokens": 382,
+      "full_source_tokens": 565,
+      "token_reduction": 0.3239,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 223,
+          "used_tokens": 223
+        },
+        "semantic": {
+          "limit_tokens": 240,
+          "raw_tokens": 147,
+          "used_tokens": 147
+        }
+      },
+      "error": "",
+      "retrieved": "<EPISODIC>\nEPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Toi se uu tien timeline khi giai thich coroutine va Task.\nEPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop.\n</EPISODIC>\n\n<SEMANTIC>\nEPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
+    },
+    {
+      "id": "G19",
+      "layer": "mixed",
+      "query": "Chuan bi demo ca nhan: ten/ma project rieng cua Minh la gi, va lan async HTTP truoc minh reuse client nhu the nao (kem ma su co)? Khong can policy domain chung, chi memory cua Minh.",
+      "passed": true,
+      "missing": [],
+      "forbidden_found": [],
+      "latency_ms": 1522.0,
+      "retrieved_tokens": 565,
+      "full_source_tokens": 565,
+      "token_reduction": 0.0,
+      "short_term_stats": {},
+      "budget_breakdown": {
+        "short_term": {
+          "limit_tokens": 800,
+          "raw_tokens": 0,
+          "used_tokens": 0
+        },
+        "long_term": {
+          "limit_tokens": 320,
+          "raw_tokens": 1405,
+          "used_tokens": 325
+        },
+        "episodic": {
+          "limit_tokens": 240,
+          "raw_tokens": 228,
+          "used_tokens": 228
         },
         "semantic": {
           "limit_tokens": 240,
@@ -459,7 +459,7 @@
         }
       },
       "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen still prefers Python for personal demos lik\n[...trimmed...]\nPython. (2026-08-01 09:00:20)\n</FACTS>\n\n<ENTITIES>\n  - Name: aiohttp ClientSession\n    Attributes:\n      name: aiohttp ClientSession\n    Summary: Minh Nguyen suggested reusing aiohttp ClientSession with concurrency=20. Minh identified the main issue as connection churn, not timeout threshold, referencing the ASYNC-FIX-20 incident.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n</THREADS>\n</LONG_TERM>\n\n<EPISODIC>\nEPISODE: Cuoi tuan minh ngoi mot minh lam demo rieng, khong hop team. Truoc khi chon template, nhac lai: khi lam viec ca nhan minh uu tien ngon ngu nao, va ma du an demo ca nhan la gi? Chi \nEPISODE: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?\nEPISODE: Toi nay minh viet tool ca nhan de tai hien su co HTTP roi sua dung playbook. Can ba manh: ngon ngu minh thich khi lam mot minh, ma su co async lan truoc, va buoc playbook truoc khi\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Sep hoi chuan hoa backend du an cong ty, minh hay lan voi stack project rieng. Rieng du an cong ty cua Minh: bat buoc ngon ngu va framework nao? Python ca nhan co duoc dung backend\n</EPISODIC>"
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen still prefers Python for personal demos lik\n[...trimmed...]\nssion\n    Attributes:\n      name: aiohttp ClientSession\n    Summary: Minh Nguyen suggested reusing aiohttp ClientSession with concurrency=20 as an effective approach. Minh identified connection churn as the primary issue, not the timeout threshold, which was related to the ASYNC-FIX-20 incident.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<EPISODIC>\nEPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600.\nEPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI\nEPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan.\nEPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan.\nEPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20.\nEPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop.\nEPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail.\n</EPISODIC>"
     },
     {
       "id": "G05",
@@ -468,14 +468,14 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1358.6,
+      "latency_ms": 1454.0,
       "retrieved_tokens": 1388,
       "full_source_tokens": 288,
       "token_reduction": 0.0,
       "short_term_stats": {},
       "budget_breakdown": {},
       "error": "",
-      "retrieved": "FACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Lab Assistant is presenting the demo ca nhan ORCHID-27. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-01T09:02:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: ORCHID-27 has a priority for Python. [valid_at=2026-08-05T08:00:20Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-05 08:00:00\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Minh Nguyen\"\n}: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHID-27.\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. (2026-08-05 08:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: Minh Nguyen\n    Label: User\n    Attributes:\n      email: \n      first_name: Minh\n      last_name: Nguyen\n      name: Minh Nguyen\n      role_type: user\n      user_id: minh-lab17\n    Summary: For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n  - Name: minh-s3\n</THREADS>"
+      "retrieved": "FACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z]\nFACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Lab Assistant is presenting the demo ca nhan ORCHID-27. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-01T09:02:20Z]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: ORCHID-27 has a priority for Python. [valid_at=2026-08-05T08:00:20Z, invalid_at=None]\nFACT: Minh Nguyen suggests that reusing aiohttp ClientSession is an effective approach. [valid_at=2026-08-03T10:03:00Z, invalid_at=None]\nFACT: Minh Nguyen often confuses coroutine with Task. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\nFACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at=2026-08-03T10:03:20Z]\nFACT: Minh Nguyen increased the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, invalid_at=2026-08-03T10:03:00Z]\n\n<USER_SUMMARY>\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. The user's personal project is named ORCHID-27, for which Python is still used.\n\nMinh likes Python and dislikes Java. The user's personal project is named ORCHARD-27. The user prefers to prioritize the timeline when explaining coroutines and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</USER_SUMMARY>\n\n<EPISODES>\nEpisodes are source message or document excerpts shown in selection order.\n  - Created At: 2026-08-05 08:00:00\n    Source: message\n    Content: [user] {\n  \"user_id\": \"minh-lab17\",\n  \"first_name\": \"Minh\",\n  \"last_name\": \"Nguyen\",\n  \"user_alias\": \"Minh Nguyen\"\n}: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHID-27.\n</EPISODES>\n\n<FACTS>\nThe timestamp shown for each fact is the reference time of the source message that introduced it — i.e. when the fact was first mentioned. `date unknown` means no reference time is recorded for the source message.\n  - Minh Nguyen likes Python. (2026-08-01 09:00:00)\n  - Minh Nguyen does not like Java. (2026-08-01 09:00:00)\n  - Minh Nguyen is learning async/await. (2026-08-01 09:02:00)\n  - Minh Nguyen's personal project is ORCHID-27. (2026-08-01 09:00:00)\n  - Minh Nguyen is debugging async HTTP. (2026-08-03 10:00:00)\n  - Minh Nguyen still prefers Python for personal demos like ORCHID-27. (2026-08-05 08:00:00)\n  - Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. (2026-08-05 08:00:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. (2026-08-05 08:00:00)\n  - Minh Nguyen suggests setting concurrency to 20. (2026-08-03 10:03:00)\n  - Minh Nguyen often confuses coroutine with Task. (2026-08-01 09:02:00)\n  - Minh Nguyen increased the timeout to 60s. (2026-08-03 10:00:00)\n  - Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. (2026-08-03 10:00:00)\n  - If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. (2026-08-01 09:02:00)\n  - ORCHID-27 has a priority for Python. (2026-08-05 08:00:20)\n  - Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. (2026-08-01 09:04:00)\n</FACTS>\n\n<ENTITIES>\n  - Name: TypeScript\n    Label: Topic\n    Attributes:\n      name: TypeScript\n    Summary: TypeScript with NestJS is required for the backend of the BLUEBIRD-42 company project, and Python is not to be used for the backend of this project. Python is still preferred for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n</THREADS>"
     },
     {
       "id": "G12",
@@ -484,7 +484,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1399.0,
+      "latency_ms": 2311.1,
       "retrieved_tokens": 431,
       "full_source_tokens": 632,
       "token_reduction": 0.318,
@@ -497,7 +497,7 @@
         },
         "long_term": {
           "limit_tokens": 320,
-          "raw_tokens": 1382,
+          "raw_tokens": 1383,
           "used_tokens": 325
         },
         "episodic": {
@@ -512,7 +512,7 @@
         }
       },
       "error": "",
-      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: BLUEBIRD-42 uses TypeScript/NestJS. [valid_at=2026-08-05T08:00:20Z, invalid_at=None]\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Lab Assistant checks concurrency. [valid_at=2026-08-03T10:01:00Z, invalid_at=None]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20\n[...trimmed...]\nnes and Tasks. When explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
+      "retrieved": "<LONG_TERM>\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: BLUEBIRD-42 uses TypeScript/NestJS. [valid_at=2026-08-05T08:00:20Z, invalid_at=None]\nFACT: Minh Nguyen needs to complete the benchmark report before Friday at 16:00. This is an open loop, LAB-REPORT-1600. [valid_at=2026-08-01T09:04:00Z, invalid_at=None]\nFACT: Lab Assistant checks concurrency. [valid_at=2026-08-03T10:01:00Z, invalid_at=None]\nFACT: Minh Nguyen's personal project is ORCHID-27. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20\n[...trimmed...]\nn explaining code, use short examples. When discussing async/await and the distinction between coroutines and Tasks, use a timeline format.\n\nFor the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python. Python preference is still for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s1\n  - Name: minh-s2\n  - Name: minh-s3\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: Reserve bounded context for memory. This lab uses short-term 10 percent, long-term 4 percent, episodic 3 percent, semantic 3 percent; trim lower-priority memory first. Marker: BUDGET-10-4-3-3.\n</SEMANTIC>"
     },
     {
       "id": "G20",
@@ -521,7 +521,7 @@
       "passed": true,
       "missing": [],
       "forbidden_found": [],
-      "latency_ms": 1374.8,
+      "latency_ms": 1982.5,
       "retrieved_tokens": 610,
       "full_source_tokens": 632,
       "token_reduction": 0.0348,
@@ -554,7 +554,7 @@
         }
       },
       "error": "",
-      "retrieved": "<SHORT_TERM>\n<SESSION_SUMMARY>\nuser: Constraint HOLD-ALPHA-0900: standup is 09:00 sharp and must not be forgotten. | assistant: Noted standup constraint. | user: Filler about dashboard widgets. | assistant: Filler. | user: Filler about CSS variables. | assistant: Filler. | user: Filler about copy review. | assistant: Filler.\n</SESSION_SUMMARY>\n<DURABLE_NOTES>\n- user: Constraint HOLD-ALPHA-0900: standup is 09:00 sharp and must not be forgotten.\n- assistant: Noted standup constraint.\n</DURABLE_NOTES>\n<RECENT_TURNS>\nuser: Filler about empty charts.\nassistant: Filler.\nuser: Filler about telemetry.\nassistant: Filler.\nuser: Filler about a11y labels.\nassistant: Filler.\n</RECENT_TURNS>\n</SHORT_TERM>\n\n<LONG_TERM>\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, in\n[...trimmed...]\n)\n</FACTS>\n\n<ENTITIES>\n  - Name: NestJS\n    Label: Topic\n    Attributes:\n      name: NestJS\n    Summary: TypeScript with NestJS is required for the backend of the BLUEBIRD-42 company project, and Python is not to be used for the backend of this project. Python is still preferred for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\n</SEMANTIC>"
+      "retrieved": "<SHORT_TERM>\n<SESSION_SUMMARY>\nuser: Constraint HOLD-ALPHA-0900: standup is 09:00 sharp and must not be forgotten. | assistant: Noted standup constraint. | user: Filler about dashboard widgets. | assistant: Filler. | user: Filler about CSS variables. | assistant: Filler. | user: Filler about copy review. | assistant: Filler.\n</SESSION_SUMMARY>\n<DURABLE_NOTES>\n- user: Constraint HOLD-ALPHA-0900: standup is 09:00 sharp and must not be forgotten.\n- assistant: Noted standup constraint.\n</DURABLE_NOTES>\n<RECENT_TURNS>\nuser: Filler about empty charts.\nassistant: Filler.\nuser: Filler about telemetry.\nassistant: Filler.\nuser: Filler about a11y labels.\nassistant: Filler.\n</RECENT_TURNS>\n</SHORT_TERM>\n\n<LONG_TERM>\nFACT: If Minh Nguyen encounters the topic of async/await later, they request an explanation via a timeline. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is debugging async HTTP. [valid_at=2026-08-03T10:00:00Z, invalid_at=None]\nFACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None]\nFACT: Minh Nguyen is forbidden from using Python for the backend of the BLUEBIRD-42 project. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen requires TypeScript for the BLUEBIRD-42 project backend. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z]\nFACT: Minh Nguyen failed to debug async HTTP even after increasing the timeout to 60s. [valid_at=2026-08-03T10:00:00Z, in\n[...trimmed...]\n)\n</FACTS>\n\n<ENTITIES>\n  - Name: NestJS\n    Label: Topic\n    Attributes:\n      name: NestJS\n    Summary: TypeScript with NestJS is required for the backend of the BLUEBIRD-42 company project, and Python is not to be used for the backend of this project. Python is still preferred for personal demos like ORCHID-27.\n</ENTITIES>\n\n<THREADS>\n  - Name: minh-s2\n  - Name: minh-s1\n</THREADS>\n</LONG_TERM>\n\n<SEMANTIC>\nEPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.\nEPISODE: Do not persist personal data without explicit opt-in. A deletion request must remove user-scoped memory and be verified across every store. Marker: DELETE-VERIFY-ALL.\n</SEMANTIC>"
     }
   ]
 }

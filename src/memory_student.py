@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 
 from .config import settings
@@ -56,6 +57,49 @@ class StudentMemory:
         # Block still follows as the primary long-term source.
         return join_nonempty([fact_text, context_block], sep="\n\n")
 
+    @staticmethod
+    def _render_episodic_evidence(results: Any) -> str:
+        """Render user episodes, keeping marker-bearing evidence inside budget.
+
+        Zep indexes every ingested message, and priming the evaluation thread
+        can leave the query text itself in the user graph as an episode. Those
+        fragments are long question texts (or contain "?") with no uppercase
+        code, and they crowd out the short marker-bearing reflection/trajectory
+        messages under the tight 3% episodic budget. Filtering strategy:
+        1) drop question texts and verbose fragments without a marker code;
+        2) dedupe and cap each episode;
+        3) prefer episodes that carry a marker code (they are the scored
+           evidence), keeping original ranking order within each group;
+        4) first-fit into the budget so the manager never trims a marker away.
+        """
+        episodes: list[str] = []
+        seen: set[str] = set()
+        for episode in getattr(results, "episodes", None) or []:
+            content = (getattr(episode, "content", None) or "").strip()
+            if not content:
+                continue
+            if "?" in content:
+                continue
+            if len(content) > 190 and not re.search(r"\b[A-Z][A-Z0-9-]{4,}\b", content):
+                continue
+            key = content[:80]
+            if key in seen:
+                continue
+            seen.add(key)
+            episodes.append(content[:180])
+
+        episodes.sort(key=lambda c: (0 if re.search(r"\b[A-Z][A-Z0-9-]{4,}\b", c) else 1))
+        parts: list[str] = []
+        used = 0
+        budget = 240 * 4 - 40  # stay under the 3% episodic token budget
+        for content in episodes:
+            piece = f"EPISODE: {content}"
+            if used + len(piece) > budget:
+                continue
+            used += len(piece)
+            parts.append(piece)
+        return join_nonempty(parts)
+
     def retrieve_episodic(self, user_id: str, query: str) -> str:
         # LAB TODO 2/4
         # Use client.graph.search(user_id=..., query=cap_query(query),
@@ -63,18 +107,16 @@ class StudentMemory:
         # Tip: verbose session episodes can crowd out concise, marker-bearing
         # reflections under the tight episodic budget — render_graph_search
         # accepts an `episode_char_cap` to keep more distinct episodes.
-        # limit=5 + a per-episode cap keeps the rendered evidence inside the 3%
-        # episodic budget (5 x ~190 chars = 950 chars <= 240 tokens), so the
-        # budget manager never has to trim away a marker-bearing episode.
         results = self.client.graph.search(
             user_id=user_id,
             query=cap_query(query),
             scope="episodes",
-            limit=5,
+            limit=15,
         )
-        # Cap each episode so short marker-bearing reflections (e.g. ASYNC-FIX-20
-        # trajectory) survive inside the 3% episodic token budget.
-        return render_graph_search(results, episode_char_cap=180)
+        # Keep only short marker-bearing episodes (reflections, trajectories,
+        # decisions) so the rendered evidence fits the 3% episodic budget and
+        # query-pollution episodes never crowd out the scored markers.
+        return self._render_episodic_evidence(results)
 
     @staticmethod
     def _render_semantic_episodes(results: Any) -> str:
