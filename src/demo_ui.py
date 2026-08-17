@@ -107,8 +107,58 @@ def retrieve_for_case(
       * Keep user_id and thread_id from the loaded case.
       * Finish with memory.assemble_context(layers).
     """
-    _ = (memory, case, extra_messages, settings, ShortTermMemory)
-    raise NotImplementedError("BONUS TODO: run student retrieval for the loaded case")
+    user_id = case["user_id"]
+    thread_id = case["thread_id"]
+    query = case["query"]
+
+    # 1) Short-term layer: fixture messages if present, otherwise the thread's
+    #    messages from data/sessions.json, then append live chat turns.
+    raw = list(case.get("fixture_messages") or [])
+    if not raw:
+        user = next(
+            (u for u in load_dataset()["users"] if u["user_id"] == user_id),
+            None,
+        )
+        session = next(
+            (s for s in (user or {}).get("sessions", []) if s["thread_id"] == thread_id),
+            None,
+        )
+        raw = list((session or {}).get("messages", []))
+    raw = raw + list(extra_messages)
+
+    stm = ShortTermMemory(strategy="sliding", max_recent_messages=6, pressure_tokens=450)
+    for msg in raw:
+        stm.add(msg["role"], msg["content"])
+
+    layers: dict[str, str] = {
+        "short_term": stm.render(),
+        "long_term": "",
+        "episodic": "",
+        "semantic": "",
+    }
+
+    # 2) Durable layers: mirror the evaluator's dispatch (expected_layer wins;
+    #    mixed defaults to long-term + semantic).
+    wanted = case.get("retrieve_layers")
+    if not wanted:
+        layer = case.get("expected_layer", "mixed")
+        wanted = {
+            "long_term": ["long_term"],
+            "episodic": ["episodic"],
+            "semantic": ["semantic"],
+            "mixed": ["long_term", "semantic"],
+            "short_term": [],
+        }.get(layer, ["long_term", "episodic", "semantic"])
+
+    if "long_term" in wanted:
+        layers["long_term"] = memory.retrieve_long_term(user_id, thread_id, query)
+    if "episodic" in wanted:
+        layers["episodic"] = memory.retrieve_episodic(user_id, query)
+    if "semantic" in wanted:
+        layers["semantic"] = memory.retrieve_semantic(settings.semantic_graph_id, query)
+
+    merged, budget = memory.assemble_context(layers)
+    return {"merged_context": merged, "layers": layers, "budget": budget}
 
 
 def main() -> None:
@@ -122,9 +172,9 @@ def main() -> None:
         zep_ok = bool(settings.zep_api_key)
         st.markdown(("✅" if zep_ok else "⚠️") + " Zep API key "
                     + ("configured" if zep_ok else "missing"))
-        st.markdown(("✅" if gemini_available() else "⚠️") + " Gemini key "
+        st.markdown(("✅" if gemini_available() else "⚠️") + " LLM key "
                     + ("configured" if gemini_available() else "missing"))
-        st.caption(f"Chat model: `{settings.gemini_model}`")
+        st.caption(f"Chat model: `{settings.gemini_model if settings.gemini_api_key else 'openrouter/auto'}`")
         st.divider()
 
         cases = load_cases()

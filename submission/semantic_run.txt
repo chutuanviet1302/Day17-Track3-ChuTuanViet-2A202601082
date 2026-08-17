@@ -1,0 +1,4 @@
+E06 semantic: Quy tac retry POST payment la gi?
+  PASS  706.8 ms
+E11 semantic: Theo incident playbook, truoc khi tang timeout can kiem tra gi?
+  PASS  271.4 ms

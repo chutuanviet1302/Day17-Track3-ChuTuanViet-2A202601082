@@ -1,0 +1,8 @@
+E09 long_term: Lan uu tien stack backend nao cho LOTUS-88?
+  PASS  2690.1 ms
+E02 long_term: Voi demo ca nhan cua Minh, ngon ngu uu tien la gi?
+  PASS  1280.7 ms
+E03 long_term: Minh con open loop hay deadline nao chua hoan thanh?
+  PASS  1394.5 ms
+E08 long_term: Backend cua BLUEBIRD-42 bat buoc dung stack gi?
+  PASS  1879.5 ms
