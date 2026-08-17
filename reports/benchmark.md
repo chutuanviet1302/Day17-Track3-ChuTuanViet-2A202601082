@@ -5,22 +5,22 @@
 - Cases: **11**
 - Passed: **11/11**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **697.3 ms**
-- Average token reduction vs full source context: **19.9%**
+- Average retrieval latency: **650.0 ms**
+- Average token reduction vs full source context: **20.5%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| E01 | short_term | PASS | 0.0 | 133 | 0.0% |  |
-| E06 | semantic | PASS | 288.0 | 53 | 88.4% |  |
-| E09 | long_term | PASS | 1426.3 | 745 | 0.0% |  |
-| E10 | short_term | PASS | 0.3 | 195 | 0.0% |  |
-| E02 | long_term | PASS | 1207.2 | 1407 | 0.0% |  |
-| E03 | long_term | PASS | 1296.8 | 1407 | 0.0% |  |
-| E04 | episodic | PASS | 237.7 | 223 | 0.0% |  |
-| E05 | episodic | PASS | 249.7 | 202 | 8.6% |  |
-| E07 | mixed | PASS | 1556.9 | 390 | 31.0% |  |
-| E11 | semantic | PASS | 212.6 | 52 | 90.8% |  |
-| E08 | long_term | PASS | 1194.3 | 1386 | 0.0% |  |
+| E01 | short_term | PASS | 0.1 | 133 | 0.0% |  |
+| E06 | semantic | PASS | 452.0 | 53 | 88.4% |  |
+| E09 | long_term | PASS | 1184.3 | 752 | 0.0% |  |
+| E10 | short_term | PASS | 1.0 | 195 | 0.0% |  |
+| E02 | long_term | PASS | 1139.5 | 1406 | 0.0% |  |
+| E03 | long_term | PASS | 1168.1 | 1405 | 0.0% |  |
+| E04 | episodic | PASS | 235.8 | 207 | 6.3% |  |
+| E05 | episodic | PASS | 266.7 | 202 | 8.6% |  |
+| E07 | mixed | PASS | 1354.9 | 390 | 31.0% |  |
+| E11 | semantic | PASS | 212.7 | 52 | 90.8% |  |
+| E08 | long_term | PASS | 1135.3 | 1384 | 0.0% |  |
 
 ## Evidence excerpts
 
@@ -50,7 +50,7 @@
 
 ### E04 - episodic
 
-`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task. Can du ba manh de ghi vao note hop. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Hom nay toi d`
+`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Hay chon huong dan code retry payment phu hop voi preference ca nhan cua Minh. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fai`
 
 ### E05 - episodic
 
