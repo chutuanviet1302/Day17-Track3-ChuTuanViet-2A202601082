@@ -5,32 +5,32 @@
 - Cases: **20**
 - Passed: **20/20**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **1018.0 ms**
-- Average token reduction vs full source context: **14.8%**
+- Average retrieval latency: **1055.5 ms**
+- Average token reduction vs full source context: **15.8%**
 - Golden bonus: **10/10** (100% required)
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
 | G01 | short_term | PASS | 0.3 | 227 | 0.0% |  |
 | G02 | short_term | PASS | 0.1 | 133 | 0.0% |  |
-| G06 | long_term | PASS | 1210.6 | 656 | 0.0% |  |
-| G09 | semantic | PASS | 219.2 | 148 | 67.8% |  |
-| G10 | semantic | PASS | 244.8 | 95 | 79.3% |  |
-| G14 | mixed | PASS | 1530.2 | 431 | 0.0% |  |
-| G03 | long_term | PASS | 1222.1 | 1388 | 0.0% |  |
-| G04 | long_term | PASS | 1167.8 | 1410 | 0.0% |  |
-| G07 | episodic | PASS | 236.9 | 222 | 0.0% |  |
-| G08 | episodic | PASS | 222.5 | 219 | 0.9% |  |
-| G11 | mixed | PASS | 1401.4 | 440 | 22.1% |  |
-| G13 | mixed | PASS | 445.3 | 391 | 30.8% |  |
-| G15 | mixed | PASS | 1714.0 | 722 | 0.0% |  |
-| G16 | mixed | PASS | 1439.7 | 485 | 14.2% |  |
-| G17 | mixed | PASS | 1522.9 | 485 | 14.2% |  |
-| G18 | mixed | PASS | 513.2 | 382 | 32.4% |  |
-| G19 | mixed | PASS | 1522.0 | 565 | 0.0% |  |
-| G05 | long_term | PASS | 1454.0 | 1388 | 0.0% |  |
-| G12 | mixed | PASS | 2311.1 | 431 | 31.8% |  |
-| G20 | mixed | PASS | 1982.5 | 610 | 3.5% |  |
+| G06 | long_term | PASS | 1245.9 | 759 | 0.0% |  |
+| G09 | semantic | PASS | 253.1 | 148 | 67.8% |  |
+| G10 | semantic | PASS | 212.5 | 95 | 79.3% |  |
+| G14 | mixed | PASS | 1394.1 | 431 | 0.0% |  |
+| G03 | long_term | PASS | 1221.7 | 1405 | 0.0% |  |
+| G04 | long_term | PASS | 1345.0 | 1410 | 0.0% |  |
+| G07 | episodic | PASS | 370.9 | 202 | 8.6% |  |
+| G08 | episodic | PASS | 221.3 | 198 | 10.4% |  |
+| G11 | mixed | PASS | 1490.8 | 440 | 22.1% |  |
+| G13 | mixed | PASS | 468.3 | 387 | 31.5% |  |
+| G15 | mixed | PASS | 2059.5 | 711 | 0.0% |  |
+| G16 | mixed | PASS | 1729.0 | 485 | 14.2% |  |
+| G17 | mixed | PASS | 1616.8 | 485 | 14.2% |  |
+| G18 | mixed | PASS | 468.2 | 385 | 31.9% |  |
+| G19 | mixed | PASS | 1841.7 | 565 | 0.0% |  |
+| G05 | long_term | PASS | 1742.1 | 1388 | 0.0% |  |
+| G12 | mixed | PASS | 1786.5 | 431 | 31.8% |  |
+| G20 | mixed | PASS | 1641.3 | 610 | 3.5% |  |
 
 ## Evidence excerpts
 
@@ -60,7 +60,7 @@
 
 ### G03 - long_term
 
-`FACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=None] FACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=None] FACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z] FACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z] FACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None] FACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None] FACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=2026-08-03T10:03:00Z, invalid_at`
+`FACT: Minh Nguyen still prefers Python for personal demos like ORCHID-27. [valid_at=2026-08-05T08:00:00Z, invalid_at=2026-08-05T08:00:20Z] FACT: demo ca nhan ORCHID-27 prioritizes Python. [valid_at=2026-08-01T09:00:20Z, invalid_at=2026-08-05T08:00:20Z] FACT: Minh Nguyen does not like Java. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z] FACT: Minh Nguyen likes Python. [valid_at=2026-08-01T09:00:00Z, invalid_at=2026-08-01T09:00:20Z] FACT: demo ca nhan ORCHID-27 avoids Java. [valid_at=2026-08-01T09:00:20Z, invalid_at=None] FACT: Minh Nguyen is learning async/await. [valid_at=2026-08-01T09:02:00Z, invalid_at=None] FACT: Minh Nguyen suggests setting concurrency to 20. [valid_at=`
 
 ### G04 - long_term
 
@@ -68,11 +68,11 @@
 
 ### G07 - episodic
 
-`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi dang hoc as`
+`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Cong ty yeu cau chinh context window cho agent tren dung backend du an cong ty. Minh can biet stack bat buoc cua BLUEBIRD va ty le budget bon tang nho trong lab de cau hinh cho dun EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Da ghi nha`
 
 ### G08 - episodic
 
-`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi se `
+`EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Hay chon huong dan code retry payment phu hop voi preference ca nhan cua `
 
 ### G11 - mixed
 
@@ -80,7 +80,7 @@
 
 ### G13 - mixed
 
-`<EPISODIC> EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python. EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chi`
+`<EPISODIC> EPISODE: Da tach scope: BLUEBIRD-42 dung TypeScript/NestJS; ORCHID-27 van uu tien Python. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Cong ty yeu cau chinh context window cho agent tren dung backend du an cong ty. Minh can biet stack bat buoc cua BLUEBIRD va ty le budget bon tang nho trong lab de cau hinh cho dun EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Mai hop mentor, toi nay minh muon don open-loop. Liet ke viec chua dong, deadline, va ma dinh danh task`
 
 ### G15 - mixed
 
@@ -96,7 +96,7 @@
 
 ### G18 - mixed
 
-`<EPISODIC> EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Toi `
+`<EPISODIC> EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Da hieu: demo ca nhan ORCHID-27, uu tien Python, tranh Java, vi du ngan. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Cong ty yeu cau chinh context window cho agent tren dung backend du an cong ty. Minh can biet stack bat bu`
 
 ### G19 - mixed
 
