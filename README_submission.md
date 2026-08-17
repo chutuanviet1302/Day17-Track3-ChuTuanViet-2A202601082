@@ -1,9 +1,10 @@
 # README_submission.md — Lab 17 Multi-Memory Agent (Zep)
 
 **Result:** practice **11/11 PASS (100% hit rate)**; golden **20/20 (+10)**; no-memory baseline
-**2/11 (18.2%)**. Artifacts: `reports/benchmark.{md,json}`, `reports/golden_benchmark.{md,json}`,
+**2/11 (18.2%)**; UI demo verified live (Streamlit + OpenRouter). Artifacts:
+`reports/benchmark.{md,json}`, `reports/golden_benchmark.{md,json}`,
 `reports/benchmark_no_memory.md`, `reports/comparison.md`, screenshots
-`submission/{long_term,episodic,semantic,privacy}.png`.
+`submission/{long_term,episodic,semantic,privacy,ui_demo}.png`.
 
 ## 1. Most important layer in this test set — long-term
 Long-term memory decides the most cases: E02, E03, E08, E09 (4/11, 20/56 points).

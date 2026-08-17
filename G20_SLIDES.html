@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case G20 — 3 Lớp Memory Trong 1 Câu Hỏi</title>
+<style>
+  :root{
+    --bg:#0f172a; --card:#1e293b; --card2:#f8fafc; --ink:#0f172a; --muted:#64748b;
+    --blue:#2563eb; --green:#059669; --purple:#7c3aed; --red:#dc2626; --amber:#d97706;
+    --line:#334155; --white:#fff;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Segoe UI", system-ui, -apple-system, sans-serif; background:var(--bg); color:#e2e8f0; line-height:1.6;}
+  .wrap{max-width:1000px; margin:0 auto; padding:24px 20px 60px;}
+  /* Hero */
+  .hero{text-align:center; padding:56px 20px 40px;}
+  .hero h1{font-size:clamp(28px,5vw,46px); color:#fff; font-weight:800; letter-spacing:-.02em;}
+  .hero p.sub{color:#94a3b8; font-size:clamp(15px,2.2vw,19px); margin-top:10px;}
+  .pills{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:26px;}
+  .pill{padding:7px 18px; border-radius:999px; color:#fff; font-weight:700; font-size:13px; letter-spacing:.04em;}
+  .p-blue{background:var(--blue);} .p-green{background:var(--green);} .p-purple{background:var(--purple);}
+  .badge{display:inline-block; margin-top:26px; background:var(--amber); color:#fff; font-weight:700;
+    padding:10px 22px; border-radius:12px; font-size:15px;}
+  /* Section */
+  section{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:26px 28px; margin-top:26px;}
+  .num{display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px;
+    background:var(--blue); color:#fff; font-weight:800; font-size:15px; margin-right:12px;}
+  h2{display:flex; align-items:center; color:#fff; font-size:22px; font-weight:700;}
+  h2 small{display:block; font-weight:400; color:#94a3b8; font-size:13px; margin-top:2px;}
+  h3{color:#fff; font-size:16px; margin:18px 0 8px;}
+  p,li{font-size:15px;}
+  .qbox{background:#0b1220; border:1px solid var(--line); border-left:4px solid var(--amber);
+    border-radius:12px; padding:16px 18px; font-size:16px; color:#f1f5f9; margin-top:14px;}
+  /* Marker cards */
+  .grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; margin-top:16px;}
+  .mcard{background:#0b1220; border:1px solid var(--line); border-radius:14px; padding:16px; text-align:center;}
+  .mcard .tag{display:inline-block; color:#fff; font-weight:700; font-size:11px; letter-spacing:.05em;
+    padding:4px 12px; border-radius:999px; margin-bottom:10px;}
+  .mcard .code{font-weight:800; font-size:19px;}
+  .mcard .desc{color:#cbd5e1; font-size:13.5px; margin-top:6px;}
+  .mcard .src{color:#94a3b8; font-size:12px; margin-top:6px;}
+  .forbid{margin-top:16px; background:#450a0a; border:1px solid #7f1d1d; border-radius:12px;
+    padding:12px 16px; color:#fecaca; font-weight:600; font-size:14.5px;}
+  /* Flow */
+  .flow{display:flex; align-items:stretch; gap:10px; flex-wrap:wrap; margin-top:16px;}
+  .fbox{flex:1; min-width:200px; background:#0b1220; border:1px solid var(--line); border-radius:12px; padding:14px; text-align:center;}
+  .fbox .h{font-weight:700; color:#fff; font-size:14px; margin-bottom:6px;}
+  .fbox .d{color:#cbd5e1; font-size:13px;}
+  .arrow{align-self:center; color:var(--amber); font-size:22px; font-weight:800;}
+  .center-box{margin:14px auto 0; text-align:center; background:#0b1220; border:1px solid var(--line);
+    border-radius:12px; padding:12px; max-width:640px; font-weight:600; color:#fff; font-size:15px;}
+  .pass-box{margin:14px auto 0; text-align:center; background:#064e3b; border:1px solid #059669;
+    border-radius:12px; padding:14px; font-weight:700; color:#d1fae5; font-size:15.5px;}
+  /* Layer sections */
+  .layer{background:#0b1220; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-top:16px;}
+  .layer h3{margin:0 0 10px; display:flex; align-items:center; gap:10px;}
+  .chip{font-size:11px; font-weight:700; color:#fff; padding:3px 10px; border-radius:999px; letter-spacing:.04em;}
+  .layer ul{margin:8px 0 8px 20px;} .layer li{margin:4px 0; color:#cbd5e1; font-size:14px;}
+  .ok{display:inline-block; background:#064e3b; border:1px solid #059669; color:#6ee7b7; border-radius:10px;
+    padding:8px 14px; font-weight:700; font-size:14px; margin-top:10px;}
+  .note{color:#94a3b8; font-size:13.5px; margin-top:10px;}
+  .mono{font-family:Consolas, "Courier New", monospace; font-size:13px; color:#a5f3fc;
+    background:#082f49; border-radius:8px; padding:10px 12px; display:block; margin-top:10px; white-space:pre-wrap;}
+  /* Table */
+  table{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px;}
+  th,td{padding:10px 12px; text-align:left; border-bottom:1px solid var(--line);}
+  th{color:#fff; background:#0b1220;}
+  td b{color:#fff;}
+  tr:nth-child(2) td{background:#0c1a33;} tr:nth-child(3) td{background:#08251b;}
+  tr:nth-child(4) td{background:#2a1a06;} tr:nth-child(5) td{background:#1d1033;}
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:18px;}
+  .kpi{background:#0b1220; border:1px solid var(--line); border-radius:14px; padding:16px;}
+  .kpi .v{font-size:26px; font-weight:800; color:#fff;}
+  .kpi .l{color:#94a3b8; font-size:12.5px; margin-top:4px;}
+  .warn{color:#fca5a5; font-size:13.5px; margin-top:14px;}
+  /* Lessons */
+  .lesson{background:#0b1220; border:1px solid var(--line); border-left:4px solid var(--amber);
+    border-radius:12px; padding:14px 16px; margin-top:12px;}
+  .lesson b{color:#fff;}
+  .lesson p{color:#cbd5e1; font-size:14px; margin-top:4px;}
+  .summary{margin-top:22px; text-align:center; background:#2a1a06; border:1px solid var(--amber);
+    border-radius:14px; padding:16px; color:#fde68a; font-weight:700; font-size:16px;}
+  footer{text-align:center; color:#475569; font-size:12.5px; margin-top:40px;}
+  @media print{ body{background:#fff; color:#0f172a;} section{background:#fff; border-color:#cbd5e1;}
+    .qbox,.mcard,.fbox,.center-box,.layer,.kpi,.lesson{background:#f8fafc; border-color:#cbd5e1; color:#0f172a;}
+    .mono{background:#f1f5f9; color:#0f172a;} th{background:#f1f5f9; color:#0f172a;}
+    .pass-box{background:#dcfce7; border-color:#059669; color:#065f46;}
+    .forbid{background:#fee2e2; border-color:#fca5a5; color:#991b1b;}
+    .summary{background:#fef3c7; border-color:#f59e0b; color:#92400e;}
+    .badge{background:#f59e0b;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Case G20 — 3 Lớp Memory Trong 1 Câu Hỏi</h1>
+    <p class="sub">Short-term + Long-term + Semantic phối hợp với nhau như thế nào?</p>
+    <div class="pills">
+      <span class="pill p-blue">SHORT-TERM · thread</span>
+      <span class="pill p-green">LONG-TERM · user</span>
+      <span class="pill p-purple">SEMANTIC · KB chung</span>
+    </div>
+    <div class="badge">Golden 20/20 · +10 điểm · PASS</div>
+  </div>
+
+  <!-- 1. BÀI TOÁN -->
+  <section>
+    <h2><span class="num">1</span><span>Bài toán của G20<small>Một câu hỏi cần 3 nguồn thông tin khác nhau — mỗi marker đến từ một lớp</small></span></h2>
+    <div class="qbox">“Trong thread này mình vừa nhắc constraint giờ standup… ghép 3 mảnh: constraint còn hiệu lực trong thread, stack bắt buộc của backend công ty, và cách đánh dấu request payment để không trùng đơn.”</div>
+    <div class="grid3">
+      <div class="mcard"><span class="tag p-blue">SHORT-TERM</span>
+        <div class="code" style="color:#60a5fa">HOLD-ALPHA-0900</div>
+        <div class="desc">Giờ standup 09:00</div>
+        <div class="src">Trong thread hiện tại</div></div>
+      <div class="mcard"><span class="tag p-green">LONG-TERM</span>
+        <div class="code" style="color:#34d399">NestJS</div>
+        <div class="desc">Stack backend BLUEBIRD-42</div>
+        <div class="src">Hồ sơ của Minh (Zep)</div></div>
+      <div class="mcard"><span class="tag p-purple">SEMANTIC</span>
+        <div class="code" style="color:#a78bfa">Idempotency-Key</div>
+        <div class="desc">Chống trùng đơn payment</div>
+        <div class="src">Kiến thức dùng chung</div></div>
+    </div>
+    <div class="forbid">❌ LOTUS-88 (dự án của Lan) KHÔNG được xuất hiện — kiểm tra user isolation</div>
+  </section>
+
+  <!-- 2. LUỒNG -->
+  <section>
+    <h2><span class="num">2</span><span>Luồng xử lý tổng quan<small>Evaluator gọi 3 layer theo retrieve_layers, gộp theo budget, rồi chấm</small></span></h2>
+    <div class="flow">
+      <div class="fbox"><div class="h" style="color:#60a5fa">1 · Short-term (local)</div><div class="d">14 tin nhắn của thread<br>→ compaction → durable notes</div></div>
+      <div class="arrow">→</div>
+      <div class="fbox"><div class="h" style="color:#34d399">2 · Long-term (Zep)</div><div class="d">User graph<br>→ Context Block + facts</div></div>
+      <div class="arrow">→</div>
+      <div class="fbox"><div class="h" style="color:#a78bfa">3 · Semantic (Zep)</div><div class="d">KB dùng chung<br>→ document PAYMENT-RULE-3</div></div>
+    </div>
+    <div class="center-box">ContextBudgetManager — 10% / 4% / 3% / 3% + thứ tự ưu tiên → merged context</div>
+    <div class="pass-box">✓ Scorer: HOLD-ALPHA-0900 ✓ NestJS ✓ Idempotency-Key ✓ không có LOTUS-88 → PASS</div>
+    <p class="note">Ghi chú: episodic = 0 vì G20 không yêu cầu — chỉ 3 layer trên được gọi.</p>
+  </section>
+
+  <!-- 3. SHORT-TERM -->
+  <section>
+    <h2><span class="num">3</span><span>Lớp 1 — Short-term: giữ constraint dù thread dài<small>Không gọi Zep — ShortTermMemory local (sliding window)</small></span></h2>
+    <div class="layer">
+      <h3><span class="chip p-blue">SHORT-TERM</span> Đầu vào</h3>
+      <ul>
+        <li>1 constraint: “Constraint HOLD-ALPHA-0900: standup is 09:00 sharp…”</li>
+        <li>1 lời xác nhận: “Noted standup constraint.”</li>
+        <li>12 tin filler (spacing, CSS, tests…)</li>
+      </ul>
+      <p class="note">Sliding window giữ 6 turn gần nhất. 12 tin filler bị nén/evict → <b>8 lần compaction</b>.</p>
+    </div>
+    <div class="layer">
+      <h3><span class="chip p-blue">SHORT-TERM</span> Đầu ra</h3>
+      <p>extract_durable_notes chỉ “thăng cấp” tin có dấu hiệu bền vững: từ khoá (constraint, deadline, todo…) hoặc <b>MÃ VIẾT HOA</b> → 2 durable notes.</p>
+      <span class="ok">✓ HOLD-ALPHA-0900 nằm trong DURABLE_NOTES</span>
+    </div>
+    <p class="note">Con số: <b>169 / 800 token</b> (không cần trim) · messages_kept 6 · durable_notes 2 · compactions 8</p>
+    <p class="note">Bài học: compaction không phải tóm tắt văn hoa — nó ưu tiên state, decision, constraint.</p>
+  </section>
+
+  <!-- 4. LONG-TERM -->
+  <section>
+    <h2><span class="num">4</span><span>Lớp 2 — Long-term: nhớ stack của từng dự án<small>Zep user graph → Context Block + fact edges (kèm valid_at / invalid_at)</small></span></h2>
+    <div class="layer">
+      <h3><span class="chip p-green">LONG-TERM</span> NestJS đến từ đâu?</h3>
+      <ul>
+        <li>Stage 3: “…BLUEBIRD-42, backend bắt buộc dùng TypeScript với NestJS; không dùng Python…”</li>
+        <li>→ Zep trích thành fact edge: “Minh Nguyen requires NestJS for the BLUEBIRD-42 project backend.”</li>
+        <li>→ Context Block USER_SUMMARY cũng lặp lại: “backend must use TypeScript with NestJS” → có 2 nguồn, chắc chắn hơn.</li>
+      </ul>
+      <span class="ok">✓ NestJS có mặt (facts + Context Block)</span>
+    </div>
+    <p class="note">Recency: constraint mới theo dự án (BLUEBIRD-42 → NestJS) thắng preference chung (Python) <b>đúng scope project đó</b>.</p>
+    <p class="note">Con số: raw <b>1403 token → trim còn 325</b> (giữ ĐẦU + ĐUÔI — marker có thể nằm ở cuối danh sách fact).</p>
+    <p class="note">Mẹo: Zep có thể đánh dấu fact invalid_at (quirk) — nhưng marker vẫn còn nhờ nguồn thứ 2 (redundancy).</p>
+  </section>
+
+  <!-- 5. SEMANTIC -->
+  <section>
+    <h2><span class="num">5</span><span>Lớp 3 — Semantic: kiến thức dùng chung<small>Không thuộc riêng Minh hay Lan — search bằng graph_id, scope=“episodes”</small></span></h2>
+    <div class="layer">
+      <h3><span class="chip p-purple">SEMANTIC</span> Nguồn: data/knowledge.jsonl</h3>
+      <ul>
+        <li>kb-payment-retry → PAYMENT-RULE-3</li>
+        <li>kb-async-http → CONN-POOL-FIRST</li>
+        <li>kb-memory-privacy → DELETE-VERIFY-ALL</li>
+        <li>kb-context-budget → BUDGET-10-4-3-3</li>
+      </ul>
+      <p class="note">Mỗi doc được seed 2 lần (JSON + text) → code dedupe, chỉ giữ summary.</p>
+    </div>
+    <div class="layer">
+      <h3><span class="chip p-purple">SEMANTIC</span> Evidence thật trả về</h3>
+      <span class="mono">“For POST /payments, every retryable request MUST send the same Idempotency-Key…
+Marker: PAYMENT-RULE-3.”</span>
+      <span class="ok">✓ Idempotency-Key có mặt · 97 / 240 token (không cần trim)</span>
+    </div>
+    <p class="note">Tại sao scope=“episodes”: giữ marker NGUYÊN VĂN (Idempotency-Key, PAYMENT-RULE-3). scope=“auto” chỉ trả fact, dễ mất mã literal.</p>
+  </section>
+
+  <!-- 6. CON SỐ -->
+  <section>
+    <h2><span class="num">6</span><span>Những con số thật (reports/golden_benchmark.json)<small>Budget 10/4/3/3 của 8000 token → 800 / 320 / 240 / 240</small></span></h2>
+    <table>
+      <tr><th>Layer</th><th>Limit</th><th>Raw</th><th>Dùng</th><th>Ghi chú</th></tr>
+      <tr><td><b>Short-term</b></td><td>800</td><td>169</td><td><b>169</b></td><td>khớp budget, không trim</td></tr>
+      <tr><td><b>Long-term</b></td><td>320</td><td>1403</td><td><b>325</b></td><td>trim giữ đầu + đuôi (+5 token nhãn)</td></tr>
+      <tr><td><b>Episodic</b></td><td>240</td><td>0</td><td><b>0</b></td><td>G20 không yêu cầu layer này</td></tr>
+      <tr><td><b>Semantic</b></td><td>240</td><td>97</td><td><b>97</b></td><td>dedupe JSON/text → khớp budget</td></tr>
+    </table>
+    <div class="kpis">
+      <div class="kpi"><div class="v">1641 ms</div><div class="l">Latency — get_user_context là call đắt nhất (~0.6–0.9s) + 2 graph search</div></div>
+      <div class="kpi"><div class="v">610 / 632</div><div class="l">Token · reduction chỉ 3.5% — phải phủ 3 layer nên không cắt mạnh được</div></div>
+      <div class="kpi"><div class="v">100%</div><div class="l">Hit rate — 3/3 marker có mặt, đây mới là thước đo quyết định</div></div>
+    </div>
+    <p class="warn">Đối chiếu: no-memory reduction ~82% nhưng chỉ pass 2/11 — cắt hết rẻ, nhưng sai.</p>
+  </section>
+
+  <!-- 7. KẾT LUẬN -->
+  <section>
+    <h2><span class="num">7</span><span>Vì sao PASS và 3 bài học</span></h2>
+    <div class="pass-box">✓ 3/3 marker có mặt (HOLD-ALPHA-0900 · NestJS · Idempotency-Key) và 0 forbidden (LOTUS-88) → PASS</div>
+    <div class="lesson"><b>1 · Scope là tường lửa</b>
+      <p>Short-term đọc đúng thread · long-term chỉ user minh-lab17 · semantic chỉ graph_id dùng chung → dữ liệu của Lan không bao giờ lọt vào.</p></div>
+    <div class="lesson"><b>2 · Trim phải giữ cả 2 đầu</b>
+      <p>Marker có thể nằm ở ĐẦU (user summary) hoặc ĐUÔI (fact cuối, marker cuối doc). Trim giữ đầu + đuôi 70/30 thay vì cắt hết đuôi.</p></div>
+    <div class="lesson"><b>3 · Redundancy cứu case</b>
+      <p>Cùng một thông tin xuất hiện ở nhiều nơi (facts + Context Block) → kể cả khi Zep đánh dấu invalid_at, marker vẫn còn để chấm.</p></div>
+    <div class="summary">Tổng kết: G20 = một câu hỏi, ba nguồn nhớ, một budget chung — đúng scope + đủ marker = PASS.</div>
+  </section>
+
+  <footer>G20 · Lab 17 Multi-Memory Agent · nguồn số liệu: reports/golden_benchmark.json (20/20 perfect)</footer>
+</div>
+</body>
+</html>
